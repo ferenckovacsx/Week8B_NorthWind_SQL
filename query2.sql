@@ -1,6 +1,9 @@
-SELECT City, CompanyName, ContactName
-FROM customers
-UNION
-SELECT City, CompanyName, ContactName
-FROM suppliers
-ORDER BY City
+SELECT 
+    City, CompanyName, ContactName, 'Customer' AS Relationship
+FROM
+    Customers 
+UNION SELECT 
+    City, CompanyName, ContactName, 'Supplier'
+FROM
+    Suppliers
+ORDER BY City, ContactName

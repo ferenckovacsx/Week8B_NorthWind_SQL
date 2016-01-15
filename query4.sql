@@ -1,8 +1,9 @@
 SELECT 
     OrderID,
-    ((products.UnitPrice - orderdetails.Discount) * Quantity) AS OrderTotal
+    SUM(Quantity * OrderDetails.UnitPrice * (1 - OrderDetails.Discount)) AS OrderTotal
 FROM
-    orderdetails
+    OrderDetails
 LEFT JOIN
-    products ON orderdetails.ProductID = products.ProductID
+    Products ON OrderDetails.ProductID = Products.ProductID
+GROUP BY OrderID
 ORDER BY OrderID
