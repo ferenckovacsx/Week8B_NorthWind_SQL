@@ -1,3 +1,5 @@
+-- Script is ready but DBCooler returns False
+
 SELECT 
 	YEAR(orders.ShippedDate) AS YearOfIncome,
     categories.CategoryName,
