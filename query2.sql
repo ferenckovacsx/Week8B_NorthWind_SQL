@@ -1,3 +1,5 @@
+-- Final script, DBCooler returns true
+
 SELECT 
     City, CompanyName, ContactName, 'Customer' AS Relationship
 FROM
